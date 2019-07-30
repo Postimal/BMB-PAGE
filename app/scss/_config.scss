@@ -1,0 +1,40 @@
+$primary-color: #797979;
+$secondary-color: #acacac;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-col-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin green-bcg-50 {
+    background: none;
+    background-color: green;
+    width: 50%
+}
+
+@mixin outline {
+    cursor: pointer;
+    outline: 7px solid #f5f0f0;
+}
+
+@mixin animation-bounce{
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+        }
+        40% {
+        transform: translateY(-30px);
+        }
+        60% {
+        transform: translateY(-15px);
+        }
+    }
+}
