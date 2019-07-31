@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-
-
     //   nav toggle class
       $(".menu").click(function() {
         $(".menu").toggleClass("active");

@@ -1,135 +1,11 @@
 @import "reset";
 @import "config";
 @import "font-face";
+@import "navigation";
+@import "footer";
 
 body {
   font-family: "MaisonNeue-Medium";
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 58px;
-  background-color: #ffffff;
-  z-index: 2;
-
-  .logo {
-    height: 100%;
-    width: 42%;
-    // margin-left: 41px;
-    @include flex;
-  }
-
-  .menu {
-    position: fixed;
-    top: 24px;
-    right: 40px;
-    width: 30px;
-    height: 21px;
-    z-index: 2;
-    cursor: pointer;
-
-    span {
-      top: 20px;
-      right: 40px;
-      width: 30px;
-      height: 2px;
-      display: block;
-      background: #262626;
-      transition: 0.5s;
-
-      &:nth-child(1) {
-        transform: translateY(-6px);
-      }
-      &:nth-child(3) {
-        transform: translateY(6px);
-      }
-    }
-    &.active span:nth-child(1) {
-      transform: translateY(0px) rotate(-45deg);
-      background-color: #000;
-      opacity: 0;
-    }
-
-    &.active span:nth-child(3) {
-      transform: translateY(0px) rotate(45deg);
-      background-color: #000;
-    }
-
-    &.active span:nth-child(2) {
-      transform: translateY(0px) rotate(-45deg);
-      background-color: #000;
-    }
-
-    &-bar {
-      position: fixed;
-      top: 58px;
-      right: 0;
-      width: 100%;
-      height: calc(100vh - 58px);
-      transition: 0.5s;
-      transform: translateX(100%);
-      background-color: #ffffff;
-      border-top: 3px #edebeb solid;
-      z-index: 1;
-
-      &.active {
-        transform: translateX(0);
-      }
-      &-container {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-
-    &-mobile-list {
-      width: 79px;
-      height: 281px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-        .menu-mobile-list__item {
-        font-size: 18px;
-        text-align: center;
-        transform: translate3d( 0, 100vh, 0);
-        transition:  transform .5s ease-out;
-
-        &:hover {
-          background-color: rgba(0,255,57,0.5);
-        }
-
-        &.active {
-          transform: translate3d(0, 0, 0);
-        }
-
-        a {
-          text-transform: uppercase;
-          color: #000;
-          transition: all .5s ease-out;
-
-        }
-      }
-    }
-  }
-      // delay for nav list
- @for $x from 1 through 5 {
-  .menu-mobile-list .menu-mobile-list__item:nth-child(#{$x}) {
-      transition-delay: $x * 0.15s;
-  }
-}
-  .menu-desktop {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 70px;
-    padding: 0 74px;
-    z-index: 1;
-  }
 }
 
 main {
@@ -511,63 +387,6 @@ main {
   width: 100%;
 }
 
-// FOOTER
-.footer {
-  position: relative;
-  margin-bottom: 50px;
-  background-color: #fafafa;
-
-  &-contact {
-    padding: 40px 0 0 33px;
-
-    .p,
-    a {
-      color: #555555;
-      font-size: 10px;
-      font-family: "MaisonNeue-Book";
-      font-weight: 300;
-      letter-spacing: 0.14px;
-      line-height: 17.45px;
-    }
-  }
-
-  &-nav {
-    margin-top: 35px;
-
-    &-menu {
-      margin: 0 38px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-
-      a {
-        position: relative;
-        color: #000000;
-        line-height: 32.8px;
-        font-weight: 400;
-      
-          &::before {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 8px;
-            bottom: -4px;
-            left: -5px;
-            background-color: #00ff39;
-            opacity: 0.62;
-          }
-      }
-    }
-
-    &-copyrights {
-      position: absolute;
-      top: 225px;
-      left: 31px;
-      font-size: 10px;
-      color: #555555;
-    }
-  }
-}
 
 @media only screen and (min-width: 550px) {
   main.overlay {
@@ -594,57 +413,6 @@ main {
 }
 
 @media only screen and (min-width: 1024px) {
-  nav {
-    height: 70px;
-
-    .logo {
-      height: 100%;
-      width: 20%;
-      margin-left: 285px;
-      justify-content: flex-start;
-    }
-
-    .menu {
-      display: none;
-    }
-
-    .menu-desktop {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding-right: 205px;
-      padding-top: 8px;
-
-      &-list {
-        display: flex;
-
-        .menu-desktop-list__item:first-child::before {
-          content: '';
-          position: absolute;
-          width: 60px;
-          height: 11px;
-          bottom: 20px;
-          left: 110px;
-          background-color: #00ff39;
-          opacity: 0.62;
-        }
-
-        a {
-          color: #000000;
-          margin-left: 40px;
-          font-size: 16px;
-          text-transform: uppercase;
-          transition: 0.05s;
-
-          &:hover {
-            border-bottom: 3px solid rgba(0,255,57,0.5);
-            border-top: 3px solid rgba(0,255,57,0.5);
-          }
-        }
-      }
-    }
-  }
-
   main {
     height: 1000px;
     margin-top: 58px;
@@ -938,47 +706,9 @@ main {
     height: 435px;
     width: 100%;
   }
-
-  .footer-contact {
-    padding: 90px 0 0 322px;
-    
-     h6 {
-      font-size: 14px;
-     }
-     
-     .p,a {
-       font-size: 14px;
-       line-height: 19px;
-     }
-  }
-
-  .footer-nav-menu {
-    width: 355px;
-    margin-left: 322px;
-    font-size: 14px;
-    font-weight: 400;
-  
-    li a::before {
-        content: '';
-        width: 100px;
-        height: 11px;
-      }
-    
-  }
-
-  .footer-nav-copyrights {
-    top: 265px;
-    left: 800px;
-    font-size: 14px;
-  }
 }
 
-
 @media only screen and (min-width: 1424px) {
-  nav .menu-desktop {
-    padding-right: 490px;
-  }
-
   .first-text-section {
     height: 940px;
     padding-left: 170px;
@@ -1025,9 +755,7 @@ main {
   }
 }
 
-
 @media only screen and (min-width: 1600px) {
-
   .second-text-section {
 
     .dots {
@@ -1055,9 +783,5 @@ main {
        @include outline
       }
     }
-  }
-
-  .footer-nav-copyrights {
-    left: 1300px;
   }
 }
