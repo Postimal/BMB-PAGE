@@ -4,7 +4,7 @@ Technologies and tools:
 * Vanilla Java Script (EcmaScript 2015 stadard)
 * RWD
 * CSS/SASS
-* GOOGLE API
+* GOOGLE API ( IMPORTANT > one use per day due to limits couse I did not pass card numbers)
 * CAROUSELE POWERED BY SLICK.JS
 
 To open locally
