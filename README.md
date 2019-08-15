@@ -7,6 +7,8 @@ Technologies and tools:
 * GOOGLE API ( IMPORTANT > one use per day due to limits couse I did not pass card numbers)
 * CAROUSELE POWERED BY SLICK.JS
 
+34 commits, rest of them are in repository with similar name (got powercut and some issues)
+
 To open locally
 
 Clone or download this Git repo onto your computer.
